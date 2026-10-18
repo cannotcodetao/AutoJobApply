@@ -33,7 +33,9 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_CONFIG = REPO_ROOT / "config" / "config.json"
 EXAMPLE_CONFIG = REPO_ROOT / "config" / "config.example.json"
 
-PLACEHOLDER_RE = re.compile(r"\{\{[A-Z0-9_]+\}\}")
+# 占位符形如 {{NAME}} 或 {{姓名}}——必须允许非 ASCII，
+# 否则用中文写的占位符会被漏检，模板就可能在未填写的情况下被当成真配置使用。
+PLACEHOLDER_RE = re.compile(r"\{\{[^{}\n]+\}\}")
 
 # 敏感字段名（出现在 config.json 里就报警，提示改用环境变量）
 SENSITIVE_KEYS = {"authcode", "password", "passwd", "smtp_password", "token", "secret"}
@@ -47,11 +49,17 @@ class ConfigError(RuntimeError):
 
 
 def find_placeholders(node, trail: str = "") -> list:
-    """递归找出所有未替换的 ``{{占位符}}``，返回 ``路径 -> 占位符`` 的可读列表。"""
+    """递归找出所有未替换的 ``{{占位符}}``，返回 ``路径 -> 占位符`` 的可读列表。
+
+    以 ``_`` 开头的键视为注释（如 ``_comment``），整棵子树跳过——
+    注释里经常会写 ``{{...}}`` 作为示例，不能当成未填项报出来。
+    """
     found = []
 
     if isinstance(node, dict):
         for key, value in node.items():
+            if str(key).startswith("_"):
+                continue
             found.extend(find_placeholders(value, f"{trail}.{key}" if trail else str(key)))
     elif isinstance(node, list):
         for index, value in enumerate(node):
@@ -130,9 +138,11 @@ def load_config(path=None, *, strict: bool = True, quiet: bool = False) -> dict:
 
 
 def _all_keys(node):
-    """递归收集所有 dict 的键名。"""
+    """递归收集所有 dict 的键名（跳过 ``_`` 注释键）。"""
     if isinstance(node, dict):
         for key, value in node.items():
+            if str(key).startswith("_"):
+                continue
             yield str(key)
             yield from _all_keys(value)
     elif isinstance(node, list):

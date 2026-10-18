@@ -185,8 +185,8 @@ def check(meta: dict, *, attach_root=None) -> list:
 
 
 def PLACEHOLDER_LEFT(value: str) -> bool:
-    """值里是否还残留 ``{{占位符}}``。"""
-    return bool(re.search(r"\{\{[A-Z0-9_]+\}\}", value or ""))
+    """值里是否还残留 ``{{占位符}}``（中英文占位符都要能识别）。"""
+    return bool(re.search(r"\{\{[^{}\n]+\}\}", value or ""))
 
 
 def warnings(meta: dict) -> list:
