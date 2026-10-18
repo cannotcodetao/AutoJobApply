@@ -1,0 +1,40 @@
+# ---- 凭据与隐私：绝不入库 ----
+config/config.json
+config/*.local.json
+*.authcode
+.env
+.env.*
+!.env.example
+
+# 真实简历与附件（本仓库只放模板，不放任何真实个人材料）
+attachments/*
+!attachments/.gitkeep
+resume/
+简历/
+
+# 运行产物：台账、日志、导出的核对表与统计表全部不入库
+# 注意用 state/* 而不是 state/ —— 后者会连整个目录一起排除，
+# 导致 !state/.gitkeep 这类恢复规则失效（git 不会进入被排除的目录）
+state/*
+!state/.gitkeep
+!state/applications.example.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 编辑器与系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 临时文件
+*.tmp
+*.bak
+~$*
+_scratch/

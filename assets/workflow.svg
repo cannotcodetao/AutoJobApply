@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 306" width="880" height="306" role="img" aria-label="AutoJobApply 七步流程：调研、核实、匹配、定制、核对表与确认、投递、核查">
+  <defs>
+    <style>
+      .bg      { fill: #ffffff; }
+      .card    { fill: #f6f7f9; stroke: #dfe3e8; stroke-width: 1.2; }
+      .card-hi { fill: #fff5f5; stroke: #cf222e; stroke-width: 1.6; }
+      .num     { fill: #8b949e; font: 600 12px ui-monospace, SFMono-Regular, Consolas, monospace; }
+      .num-hi  { fill: #cf222e; font: 600 12px ui-monospace, SFMono-Regular, Consolas, monospace; }
+      .title   { fill: #1a1d22; font: 600 15px -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; }
+      .sub     { fill: #5b6472; font: 400 11.5px -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; }
+      .lead    { fill: #1a1d22; font: 700 17px -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; }
+      .note    { fill: #5b6472; font: 400 12px -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; }
+      .gate    { fill: #cf222e; font: 600 11.5px -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; }
+      .arrow   { stroke: #b0b7c3; stroke-width: 1.6; fill: none; }
+      .arrow-hi{ stroke: #cf222e; stroke-width: 1.8; fill: none; stroke-dasharray: 5 4; }
+      .loop    { stroke: #b0b7c3; stroke-width: 1.2; fill: none; stroke-dasharray: 4 4; }
+
+      @media (prefers-color-scheme: dark) {
+        .bg      { fill: #0f1115; }
+        .card    { fill: #171a21; stroke: #2a2f3a; }
+        .card-hi { fill: #241519; stroke: #f85149; }
+        .num     { fill: #7d8590; }
+        .num-hi  { fill: #f85149; }
+        .title   { fill: #e6e9ef; }
+        .sub     { fill: #9aa4b2; }
+        .lead    { fill: #e6e9ef; }
+        .note    { fill: #9aa4b2; }
+        .gate    { fill: #f85149; }
+        .arrow   { stroke: #3d4451; }
+        .arrow-hi{ stroke: #f85149; }
+        .loop    { stroke: #3d4451; }
+      }
+    </style>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b0b7c3"/>
+    </marker>
+    <marker id="ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#cf222e"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="880" height="306" rx="12"/>
+
+  <text class="lead" x="24" y="34">校招邮件投递 · 七步流程</text>
+  <text class="note" x="24" y="54">第 ⑤ 步是闸门：用户不确认，程序发不出去（退出码 3）</text>
+
+  <!-- 节点 1 -->
+  <rect class="card" x="24" y="74" width="104" height="92" rx="10"/>
+  <text class="num"   x="40" y="98">①</text>
+  <text class="title" x="40" y="124">调研</text>
+  <text class="sub"   x="40" y="144">岗位 · 城市</text>
+  <text class="sub"   x="40" y="159">专业口径</text>
+
+  <line class="arrow" x1="132" y1="120" x2="146" y2="120" marker-end="url(#ah)"/>
+
+  <!-- 节点 2 -->
+  <rect class="card" x="150" y="74" width="104" height="92" rx="10"/>
+  <text class="num"   x="166" y="98">②</text>
+  <text class="title" x="166" y="124">核实</text>
+  <text class="sub"   x="166" y="144">来源分级</text>
+  <text class="sub"   x="166" y="159">MX 体检</text>
+
+  <line class="arrow" x1="258" y1="120" x2="272" y2="120" marker-end="url(#ah)"/>
+
+  <!-- 节点 3 -->
+  <rect class="card" x="276" y="74" width="104" height="92" rx="10"/>
+  <text class="num"   x="292" y="98">③</text>
+  <text class="title" x="292" y="124">匹配</text>
+  <text class="sub"   x="292" y="144">职责 ↔ 经历</text>
+  <text class="sub"   x="292" y="159">找重合点</text>
+
+  <line class="arrow" x1="384" y1="120" x2="398" y2="120" marker-end="url(#ah)"/>
+
+  <!-- 节点 4 -->
+  <rect class="card" x="402" y="74" width="104" height="92" rx="10"/>
+  <text class="num"   x="418" y="98">④</text>
+  <text class="title" x="418" y="124">定制</text>
+  <text class="sub"   x="418" y="144">逐封重写</text>
+  <text class="sub"   x="418" y="159">如实披露</text>
+
+  <line class="arrow-hi" x1="510" y1="120" x2="524" y2="120" marker-end="url(#ahr)"/>
+
+  <!-- 节点 5（闸门） -->
+  <rect class="card-hi" x="528" y="74" width="118" height="92" rx="10"/>
+  <text class="num-hi"  x="544" y="98">⑤ 闸门</text>
+  <text class="title"   x="544" y="124">核对表</text>
+  <text class="sub"     x="544" y="144">五项摊开给人看</text>
+  <text class="gate"    x="544" y="159">用户确认才放行</text>
+
+  <line class="arrow" x1="650" y1="120" x2="664" y2="120" marker-end="url(#ah)"/>
+
+  <!-- 节点 6 -->
+  <rect class="card" x="668" y="74" width="88" height="92" rx="10"/>
+  <text class="num"   x="684" y="98">⑥</text>
+  <text class="title" x="684" y="124">投递</text>
+  <text class="sub"   x="684" y="144">--approved</text>
+  <text class="sub"   x="684" y="159">幂等</text>
+
+  <line class="arrow" x1="760" y1="120" x2="774" y2="120" marker-end="url(#ah)"/>
+
+  <!-- 节点 7 -->
+  <rect class="card" x="778" y="74" width="78" height="92" rx="10"/>
+  <text class="num"   x="794" y="98">⑦</text>
+  <text class="title" x="794" y="124">核查</text>
+  <text class="sub"   x="794" y="144">四级验证</text>
+  <text class="sub"   x="794" y="159">归因</text>
+
+  <!-- 反馈回路：核查 → 台账 -->
+  <path class="loop" d="M817,166 L817,206 Q817,214 809,214 L120,214 Q112,214 112,206 L112,170"/>
+  <text class="note" x="430" y="232" text-anchor="middle">核查结果回写台账 → 下一轮调研的输入</text>
+
+  <!-- 底部四级验证图例 -->
+  <text class="note" x="24" y="268">送达四级：</text>
+  <text class="sub"  x="96"  y="268">① SMTP 250</text>
+  <text class="sub"  x="196" y="268">② MX 可用</text>
+  <text class="sub"  x="288" y="268">③ 无退信 / RCPT 250</text>
+  <text class="sub"  x="436" y="268">④ 收到回信</text>
+  <text class="gate" x="524" y="268">← 只有 ④ 能证明 HR 读到了</text>
+</svg>

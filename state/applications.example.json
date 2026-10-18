@@ -1,0 +1,36 @@
+{
+  "_comment": "投递台账模板。复制为 state/applications.json 后填写。这是统计表的唯一数据源。",
+  "_why_manual": "为什么不全自动生成：非邮箱渠道（网申、招聘平台）的投递没有机器日志，只有你自己知道投了什么。手工维护一份台账，比事后猜要可靠得多。",
+
+  "meta": {
+    "as_of": "{{更新日期}}",
+    "business_scope_max_chars": 15
+  },
+
+  "applications": [
+    {
+      "company": "示例半导体设备有限公司",
+      "business": "半导体薄膜沉积设备",
+      "role": "嵌入式软件工程师（2027 届）",
+      "location": "深圳",
+      "channel": "邮箱",
+      "applied_at": "2027-09-20",
+      "delivery": "✅ 未见退信",
+      "status": "已发送",
+      "note": "收件 hr@example.com；官网原文核实；MX 正常",
+      "draft_id": "E1"
+    },
+    {
+      "company": "示例电子股份有限公司",
+      "business": "工业自动化控制产品",
+      "role": "算法工程师",
+      "location": "广州",
+      "channel": "网申",
+      "applied_at": "2027-09-28",
+      "delivery": "不适用",
+      "status": "已收到回执",
+      "note": "官网网申系统，简历编号 00000",
+      "draft_id": ""
+    }
+  ]
+}

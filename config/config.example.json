@@ -1,0 +1,50 @@
+{
+  "_comment": "AutoJobApply 配置模板。复制为 config.json 后填写全部 {{...}} 占位符。凭据不要写在这里。",
+
+  "sender": {
+    "email": "{{SENDER_EMAIL}}",
+    "from_name": "",
+    "smtp_host": "smtp.qq.com",
+    "smtp_port": 465,
+    "imap_host": "imap.qq.com",
+    "imap_port": 993,
+    "authcode_env": "AUTOJOB_AUTHCODE",
+    "interval_sec": 25
+  },
+
+  "candidate": {
+    "name": "{{姓名}}",
+    "phone": "{{手机号}}",
+    "email": "{{联系邮箱}}",
+    "school": "{{学校}}",
+    "major": "{{专业}}",
+    "degree": "{{学历}}",
+    "graduation": "{{毕业时间，如 2027.06}}"
+  },
+
+  "preferences": {
+    "priority_cities": ["{{城市1}}", "{{城市2}}"],
+    "accepts_travel": true,
+    "notes": "{{其他约束，如「接受出差/驻厂」}}"
+  },
+
+  "paths": {
+    "drafts": "drafts",
+    "attachments": "attachments",
+    "state": "state",
+    "send_log": "state/send_log.json",
+    "applications": "state/applications.json",
+    "stats_xlsx": "state/applications.xlsx"
+  },
+
+  "safety": {
+    "require_approved": true,
+    "max_sends_per_run": 10,
+    "block_unverified_source": true,
+    "verify_mx_before_send": true
+  },
+
+  "stats": {
+    "business_scope_max_chars": 15
+  }
+}

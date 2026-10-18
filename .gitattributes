@@ -1,0 +1,16 @@
+# 统一换行符，避免 Windows 上 clone 后脚本因 CRLF 报错
+* text=auto eol=lf
+
+*.py     text eol=lf
+*.md     text eol=lf
+*.json   text eol=lf
+*.txt    text eol=lf
+*.sh     text eol=lf
+
+# 二进制不要被当文本 diff
+*.pdf    binary
+*.docx   binary
+*.xlsx   binary
+*.png    binary
+*.jpg    binary
+*.svg    text eol=lf
